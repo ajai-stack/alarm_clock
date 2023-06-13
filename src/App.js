@@ -6,14 +6,6 @@ export default function App() {
   const [alarmTime, setAlarmTime] = useState("0");
   const [status, setStatus] = useState(false);
 
-  //to check the current time and alarm time is equal or not,,
-  useEffect(() => {
-    if  (status && clockTime === alarmTime) {
-    alert("Wake upp", clockTime, alarmTime);
-    window.location.reload();
-      setStatus(false);
-    }
-  }, [clockTime, alarmTime, status]);
 
   //displaying current time
   const updateClockTime = () => {
@@ -46,8 +38,16 @@ export default function App() {
     setStatus(!status);
   };
 
+    //to check the current time and alarm time is equal or not,,
+    useEffect(() => {
+      if  (status && clockTime === alarmTime) {
+      alert("Wake upp", clockTime, alarmTime);
+      window.location.reload();
+        setStatus(false);
+      }
+    }, [clockTime, alarmTime, status]);
 
-
+    
   return (
     <div className='first'>
       <div className="wrapper">
